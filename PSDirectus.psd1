@@ -1,14 +1,17 @@
 @{
-  ModuleVersion = '1.0.0'
-  GUID = '2aaa4afa-2973-4005-8ebb-f73bf6b65ff4'
-  Author = 'Kieron Morris'
-  CompanyName = 'Spexeah'
-  Description = 'PSDirectus - A PowerShell wrapper for the Directus API.'
-  PowerShellVersion = '5.1'
+  RootModule = 'PSDirectus.psm1'
 
-  ScriptsToProcess = @(
-    'PSDirectus.psm1'
-  )
+  ModuleVersion = '1.0.0'
+
+  GUID = '2aaa4afa-2973-4005-8ebb-f73bf6b65ff4'
+
+  Author = 't3hn3rd (kjm@kieronmorris.me)'
+
+  CompanyName = 'Spexeah'
+
+  Description = 'PSDirectus - A PowerShell wrapper for the Directus API.'
+
+  RequiredModules = @('PSMultipartFormData', 'PSMimeTypes')
 
   FunctionsToExport = @('New-PSDirectusContext', 
                         'New-PSDirectusFilter',
@@ -31,9 +34,11 @@
                         'Update-PSDirectusFiles',
                         'Import-PSDirectusFile'
                       )
-  CmdletsToExport = @()
-  VariablesToExport = @()
-  AliasToExport = @()
-
-  RequiredModules = @()
+  PrivateData = @{
+    PSData = @{
+      Tags = @('Directus', 'API', 'Module', 'Files', 'Items', 'CRUD', 'REST')
+      LicenseUri = 'https://github.com/t3hn3rd/PSDirectus/blob/master/LICENSE'
+      ProjectUri = 'https://github.com/t3hn3rd/PSDirectus'
+    }
+  }
 }
