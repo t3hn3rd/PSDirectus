@@ -126,8 +126,7 @@
     Directus API Documentation: https://docs.directus.io/
 #>
 
-Import-Module "$PSScriptRoot\PSFormData.psm1" -Force
-Import-Module "$PSScriptRoot\PSMimeTypes.psm1" -Force
+Import-Module "PSMultipartFormData" -Force
 
 # Global options for PSDirectus
 $Script:PSDirectusOptions = @{
