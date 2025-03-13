@@ -16,8 +16,8 @@ PSDirectus is a PowerShell module designed to interact with the Directus API. It
   - `Update-PSDirectusItem` : Updates a single item in a Directus collection.
   - `Update-PSDirectusItems` : Bulk updates multiple items.
   - `Update-PSDirectusItemSingleton` : Updates a singleton item.
-  - `Remove-PSDirectusItem` 🗑️: Deletes a single item from a Directus collection.
-  - `Remove-PSDirectusItems` 🗑️📦: Bulk deletes multiple items.
+  - `Remove-PSDirectusItem` : Deletes a single item from a Directus collection.
+  - `Remove-PSDirectusItems` : Bulk deletes multiple items.
 - 📂 **File Management (CRUD)**
   - `Get-PSDirectusFile` : Retrieves file details from Directus.
   - `New-PSDirectusFile` : Uploads a new file.
@@ -84,6 +84,8 @@ $item = Get-PSDirectusItem -Context $context -Collection "articles" -ID 1
 $newItem = New-PSDirectusItem -Context $context -Collection "articles" -Data @{ title = "New Article" }
 ```
 
+## 📄 License
+Licensed under Apache Version 2.0
+
 ## 🤝 Contributing
 Contributions are welcome! Feel free to open issues or submit pull requests to enhance functionality. 🎉👨‍💻🚀
-
