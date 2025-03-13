@@ -1,5 +1,7 @@
 # 📜 PSDirectus
 
+[![PSMimeTypes PSGallary Version](https://img.shields.io/powershellgallery/v/PSDirectus?label="PSGallery")](https://www.powershellgallery.com/packages/PSDirectus/) [![PSGallery Downloads](https://img.shields.io/powershellgallery/dt/PSDirectus?label=PSGallery%20Downloads)](https://www.powershellgallery.com/packages/PSDirectus/)
+
 ## 🌍 Overview
 PSDirectus is a PowerShell module designed to interact with the Directus API. It provides an easy-to-use interface for authentication, querying items, and performing CRUD (Create, Read, Update, Delete) operations on Directus collections & files.
 
@@ -88,4 +90,7 @@ $newItem = New-PSDirectusItem -Context $context -Collection "articles" -Data @{ 
 Licensed under Apache Version 2.0
 
 ## 🤝 Contributing
-Contributions are welcome! Feel free to open issues or submit pull requests to enhance functionality. 🎉👨‍💻🚀
+Contributions are welcome! Feel free to open issues or submit pull requests to enhance functionality.
+
+## 👨‍💻 Contributors
+- **Kieron Morris** (t3hn3rd) - [kjm@kieronmorris.me](mailto:kjm@kieronmorris.me)
