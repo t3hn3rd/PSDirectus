@@ -140,7 +140,7 @@ class PSRequestURI {
 
 .EXAMPLE
     $requestURI = New-PSRequestURI -BaseURL "https://example.com/api" -Endpoint "users"
-    Write-Output $requestURI
+    Write-Output $requestURI.get()
 
 .NOTES
     Author: Kieron Morris/t3hn3rd (kjm@kieronmorris.me)
