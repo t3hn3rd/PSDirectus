@@ -1,7 +1,7 @@
 @{
   RootModule = 'PSDirectus.psm1'
 
-  ModuleVersion = '1.0.0'
+  ModuleVersion = '1.0.1'
 
   GUID = '2aaa4afa-2973-4005-8ebb-f73bf6b65ff4'
 
@@ -39,6 +39,7 @@
       Tags = @('Directus', 'API', 'Module', 'Files', 'Items', 'CRUD', 'REST')
       LicenseUri = 'https://github.com/t3hn3rd/PSDirectus/blob/master/LICENSE'
       ProjectUri = 'https://github.com/t3hn3rd/PSDirectus'
+      IconUri = 'https://github.com/t3hn3rd/PSDirectus/raw/master/media/icon_256.png'
     }
   }
 }

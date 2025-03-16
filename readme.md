@@ -1,6 +1,6 @@
 # 📜 PSDirectus
 
-[![PSMimeTypes PSGallary Version](https://img.shields.io/powershellgallery/v/PSDirectus?label="PSGallery")](https://www.powershellgallery.com/packages/PSDirectus/) [![PSGallery Downloads](https://img.shields.io/powershellgallery/dt/PSDirectus?label=PSGallery%20Downloads)](https://www.powershellgallery.com/packages/PSDirectus/)
+[![PSMimeTypes PSGallary Version](https://img.shields.io/powershellgallery/v/PSDirectus?label="PSGallery")](https://www.powershellgallery.com/packages/PSDirectus) [![PSGallery Downloads](https://img.shields.io/powershellgallery/dt/PSDirectus?label=PSGallery%20Downloads)](https://www.powershellgallery.com/packages/PSDirectus)
 
 ## 🌍 Overview
 PSDirectus is a PowerShell module designed to interact with the Directus API. It provides an easy-to-use interface for authentication, querying items, and performing CRUD (Create, Read, Update, Delete) operations on Directus collections & files.
@@ -85,6 +85,11 @@ $item = Get-PSDirectusItem -Context $context -Collection "articles" -ID 1
 ```powershell
 $newItem = New-PSDirectusItem -Context $context -Collection "articles" -Data @{ title = "New Article" }
 ```
+
+## 📦 Dependencies
+This module relies on:
+- [PSMimeTypes](https://github.com/t3hn3rd/PSMimeTypes) - A PowerShell module that provides functionality for resolving MIME types from file extensions and filenames. ([PSGallery](https://www.powershellgallery.com/packages/PSMimeTypes))
+- [PSMultipartFormData](https://github.com/t3hn3rd/PSMultipartFormData) - A PowerShell module that provides functionality for constructing and managing multipart form data for HTTP requests. This module helps in adding fields, files, and JSON objects to a form data body. ([PSGallery](https://www.powershellgallery.com/packages/PSDirectus))
 
 ## 📄 License
 Licensed under Apache Version 2.0
