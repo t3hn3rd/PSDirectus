@@ -13,7 +13,7 @@
 
   RequiredModules = @('PSMultipartFormData', 'PSMimeTypes')
 
-  FunctionsToExport = @('New-PSDirectusContext', 
+  FunctionsToExport = @('New-PSDirectusContext',
                         'New-PSDirectusFilter',
 
                         'Get-PSDirectusItemSingleton',
@@ -32,7 +32,9 @@
                         'Remove-PSDirectusFiles',
                         'Update-PSDirectusFile',
                         'Update-PSDirectusFiles',
-                        'Import-PSDirectusFile'
+                        'Import-PSDirectusFile',
+
+                        'New-PSDirectusRequestURI'
                       )
   PrivateData = @{
     PSData = @{
