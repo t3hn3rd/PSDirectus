@@ -53,6 +53,14 @@ class DirectusContext {
     $this.Headers['User-Agent'] = $this.Headers['User-Agent'].Replace(':useragent', $Script:PSDirectusOptions['User-Agent']);
     $this.Endpoints = $Script:DirectusEndpoints.PSObject.Copy();
   }
+  DirectusContext([String]$BaseURL) {
+    Write-Warning "DirectusContext constructed without a token. Only publicly accessible endpoints will be available."
+    $this.Token = $null;
+    $this.BaseURL = $BaseURL;
+    $this.Headers = $Script:DirectusHeadersNoAuthTemplate.PSObject.Copy();
+    $this.Headers['User-Agent'] = $this.Headers['User-Agent'].Replace(':useragent', $Script:PSDirectusOptions['User-Agent']);
+    $this.Endpoints = $Script:DirectusEndpoints.PSObject.Copy();
+  }
   hidden [hashtable] getHeaders() {
     return $this.Headers;
   }
@@ -92,12 +100,38 @@ function New-PSDirectusContext {
   param(
     [Parameter(Mandatory=$true)]
     [String] $BaseURL,
-    [Parameter(Mandatory=$true)]
-    [String] $Token
+    [String] $Token,
+    [Switch] $StoreContext
   )
   process {
-    return [DirectusContext]::new($Token, $BaseURL)
+    if($Token) {
+        $Context = [DirectusContext]::new($Token, $BaseURL)
+    } else {
+        $Context = [DirectusContext]::new($BaseURL)
+    }
+    if($StoreContext) {
+        $Script:DirectusModuleRuntime['StoredContext'] = $Context
+    } else {
+        return $Context
+    }
   }
 }
 
+function Resolve-PSDirectusContext {
+    param (
+        [Parameter(Mandatory=$false)]
+        [DirectusContext] $Context
+    )
+    process {
+        if($Context) {
+            return $Context
+        } elseif($Script:DirectusModuleRuntime['StoredContext']) {
+            return $Script:DirectusModuleRuntime['StoredContext']
+        } else {
+            throw "No DirectusContext provided and no stored context found."
+        }
+    }
+}
+
 Export-ModuleMember -Function New-PSDirectusContext
+Export-ModuleMember -Function Resolve-PSDirectusContext
